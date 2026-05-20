@@ -103,7 +103,6 @@ main {
 .originalPrice {
     font-family: var(--font-montserrat);
     color: var(--grey);
-    text-decoration: line-through;
     font-size: clamp(0.625rem, 0.554rem + 0.36vw, 0.875rem);
 }
 
@@ -121,10 +120,17 @@ main {
     justify-content: center;
     align-items: center;
     gap: 12px;
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+    transition: background-color 0.2s, outline-color 0.2s;
 }
 
 .cart:hover {
     background-color: var(--green-700);
+}
+
+.cart:focus-visible {
+    outline-color: var(--green-500);
 }
 
 @media (max-width: 560px) {
